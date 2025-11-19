@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-{% load static %}
-{% for post in posts %}
 <div class="card" style="width: 18rem; margin-left: 10px;">
     {% if post.image %}
     <img src="{{post.image.url}}" class="card-img-top" alt="...">
@@ -11,11 +9,9 @@
     <div class="card-body">
      <h5 class="card-title">{{post.title}}</h5>
      <p class="card-text">{{post.content}}</p> 
-     <h6 class="card-title">{{post.rate}}</h6>
+     <h6 class="card-title">{{post.rate}}</p>
      <p class="card-text">{{post.created_at}}</p>
      <p class="card-text">{{post.updated_at}}</p>
-     <a href="/posts/{{post.id}}" class="btn btn-primary">Detail view</a>
     </div>
 </div>
-{% endfor %}
 {% endblock %}
